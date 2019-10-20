@@ -50,6 +50,7 @@ def grid():
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     f.mainloop() #Fermeture de l'interface
+    player = 0
 
 
     
