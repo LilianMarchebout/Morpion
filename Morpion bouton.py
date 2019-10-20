@@ -19,7 +19,7 @@ Finished : mm/dd/yy
 
 ##IMPORTATION
 
-from tkinter import * #Interface tactile
+from tkinter import Tk, PhotoImage, Button  #Interface tactile
 
 from time import sleep #Permet de faire attendre le programme notamment pour mettre en pause
 
