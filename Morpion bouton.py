@@ -66,24 +66,24 @@ def jeu(nom):
     cercle = PhotoImage(file='cercle.png')
     
     #Définition du joueur qui joue
-    global joueur
-    print(joueur)
-    joueur += 1 
-    joueur %= 2
+    global player
+    print(player)
+    player += 1 
+    player %= 2
     
     #Pour chaque clef du dictionnaire
     for key in case.keys():
         if str(key) == nom: 
             substitue = case[nom]
             if substitue[0] == True: #Si case déjà prise
-                joueur -= 1 #Revient au joueur initial
+                player -= 1 #Revient au joueur initial
                 break
             else:
                 substitue[0] = True #Case prise
-                if joueur == 0:
+                if player == 0:
                     substitue[1] = 1 #J2 points
                     buttons[substitue[4]-1].config(image= croix) #Met la croix
-                if joueur == 1:
+                if player == 1:
                     substitue[1] = 10#J1 points
                     buttons[substitue[4]-1].config(image= cercle) #Met le cercle
                 case[nom] = substitue
@@ -112,7 +112,7 @@ fichier.close()
 
 
 #Variable permettant de déterminer quel joueur joue 
-joueur = 0
+player = 0
 
 
 #Liste pour les boutons
