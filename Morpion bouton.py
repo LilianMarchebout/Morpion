@@ -5,7 +5,7 @@ Started : 09/30/19
 Finished : mm/dd/yy
 """
 
-## Dimension portable : 720x1280
+## Dimension: 720x720
 
 ##Prochaine(s) étape(s):
     # Probleme bouton gris
@@ -84,7 +84,10 @@ def jeu(nom):
                     substitue[1] = 10#J1 points
                     buttons[substitue[4]-1].config(image= cercle)
                 case[nom] = substitue
-               
+
+
+
+
 ##VARIABLE
 #dictionnaire avec comme clef le nom de la case, et comme valeur une liste avec l'appartenance à un joueur, le nombre de points, l'abscisse, l'ordonnée, le numéro de la case
 case ={str(chr(c)+str(n)):[False, 0, (n-1)*240, ("ZABC".index(chr(c))-1)*240, int(("A0A1A2A3B1B2B3C1C2C3".index(chr(c)+str(n)))/2)] for c in range(65, 68) for n in range(1, 4)}
@@ -93,11 +96,14 @@ fichier = open("test.txt", "a")
 fichier.write(str(case) + "\n")
 fichier.close()
 
+
 #variable permettant de determiner quel joueur joue 
 joueur = 0
 
+
 #Liste pour les boutons
 buttons = []
+
 
 
 
