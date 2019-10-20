@@ -28,7 +28,7 @@ from time import sleep #Permet de faire attendre le programme notamment pour met
 
 ##FONCTION
 
-def grille():
+def grid():
     """
     Crée la grille avec l'interface tkinter et crée les boutons
     """
@@ -46,14 +46,14 @@ def grille():
     for nameCase in case.keys():
         newbutton = Button(f, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = jeu(nameCase)) #Commande du bouton
-        substitue = case[nameCase] 
-        newbutton.place(x= substitue[2], y= substitue[3]) #Placement du bouton
+        newbutton.config(command = game(nameCase)) #Commande du bouton
+        substitute = case[nameCase] 
+        newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     f.mainloop() #Fermeture de l'interface
 
 
     
-def jeu(nom):
+def game(name):
     """
     Quand la boutton est actionné :
         - Met la case en True
@@ -62,8 +62,8 @@ def jeu(nom):
     """
     
     #Variable Image
-    croix = PhotoImage(file='croix.png')
-    cercle = PhotoImage(file='cercle.png')
+    cross = PhotoImage(file='croix.png')
+    circle = PhotoImage(file='cercle.png')
     
     #Définition du joueur qui joue
     global player
@@ -73,20 +73,20 @@ def jeu(nom):
     
     #Pour chaque clef du dictionnaire
     for key in case.keys():
-        if str(key) == nom: 
-            substitue = case[nom]
-            if substitue[0] == True: #Si case déjà prise
+        if str(key) == name: 
+            substitute = case[name]
+            if substitute[0] == True: #Si case déjà prise
                 player -= 1 #Revient au joueur initial
                 break
             else:
-                substitue[0] = True #Case prise
+                substitute[0] = True #Case prise
                 if player == 0:
-                    substitue[1] = 1 #J2 points
-                    buttons[substitue[4]-1].config(image= croix) #Met la croix
+                    substitute[1] = 1 #J2 points
+                    buttons[substitute[4]-1].config(image= cross) #Met la croix
                 if player == 1:
-                    substitue[1] = 10#J1 points
-                    buttons[substitue[4]-1].config(image= cercle) #Met le cercle
-                case[nom] = substitue
+                    substitute[1] = 10#J1 points
+                    buttons[substitute[4]-1].config(image= circle) #Met le cercle
+                case[name] = substitute
 
 
 
@@ -106,9 +106,9 @@ case ={str(chr(c)+str(n)):[False, 0, (n-1)*240, ("ZABC".index(chr(c))-1)*240, in
 'C3': [False, 0, 480, 480, 9]}
 """
 #Fichier pour inscrire les éléments du dictionnaire
-fichier = open("test.txt", "w")
-fichier.write(str(case) + "\n")
-fichier.close()
+folder = open("test.txt", "w")
+folder.write(str(case) + "\n")
+folder.close()
 
 
 #Variable permettant de déterminer quel joueur joue 
@@ -122,7 +122,7 @@ buttons = []
 
 
 ##SCRIPT
-grille()
+grid()
 
 
 
