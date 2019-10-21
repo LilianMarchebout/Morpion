@@ -9,7 +9,7 @@ Finished : mm/dd/yy
 ## Dimension: 720x720
 
 ##Prochaine(s) étape(s):
-    # Joue tout seul 
+    # Problème : Actionne pas les boutons 
     # Message d'avertissement
     # Définition des lignes gagnantes
     # Fin
