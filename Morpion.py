@@ -43,6 +43,8 @@ def grid():
     #La position est la position du coin en haut à gauche du bouton
 
     # Création des boutons
+    global inter
+    inter = 0
     for nameCase in case.keys():
         newbutton = Button(f, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
@@ -50,6 +52,7 @@ def grid():
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     f.mainloop() #Fermeture de l'interface
+    inter = 1
     global player
     player = 0
 
@@ -59,7 +62,10 @@ def intermediate(name):
     """
     Sert à que bouton ne lance pas la commande lors de sa définition.
     """
-    game(name)
+    global inter
+    print(inter)
+    if inter == 1:
+        game(name)
 
 
 
