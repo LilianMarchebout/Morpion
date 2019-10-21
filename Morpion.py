@@ -73,7 +73,6 @@ def intermediateFunction(name):
     """
     global player
     global intermediateVariable 
-    print(intermediateVariable)
     if intermediateVariable == 1:
         game(name)
 
@@ -118,14 +117,14 @@ def game(name):
 
 
 
-def grid():
+def grid(window):
     """
     Crée la grille avec l'interface tkinter et crée les boutons
     """
-    
-    window = Tk() #Ouverture de l'interface et définition de la fenêtre
+    print(type(window))
     window.geometry("720x720") #Dimension de l'interface
     default = PhotoImage(file='./Image/default.png')
+    window.mainloop() #Fermeture de l'interface
 
 
 
@@ -143,7 +142,6 @@ def grid():
         newbutton.config(command = intermediateFunction(nameCase)) #Commande du bouton
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
-    window.mainloop() #Fermeture de l'interface
     intermediateVariable = 1
     global player
     player = 0
@@ -152,8 +150,9 @@ def grid():
 
 
 ##SCRIPT
-grid()
-
+window = Tk() #Ouverture de l'interface et définition de la fenêtre
+grid(window)
+window.mainloop() #Fermeture de l'interface
 
 
 
