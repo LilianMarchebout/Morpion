@@ -69,7 +69,7 @@ buttons = []
 
 def intermediateFunction(name):
     """
-    Sert à que bouton ne lance pas la commande lors de sa définition.
+    Sert à que le bouton ne lance pas la commande lors de sa définition.
     """
     global player
     global intermediateVariable 
