@@ -30,15 +30,16 @@ from time import sleep #Permet de faire attendre le programme notamment pour met
 #Dictionnaire avec comme clef le nom de la case, et comme valeur une liste avec l'appartenance à un joueur, le nombre de points, l'abscisse, l'ordonnée, le numéro de la case
 case ={str(chr(c)+str(n)):[False, 0, (n-1)*240, ("ZABC".index(chr(c))-1)*240, int(("A0A1A2A3B1B2B3C1C2C3".index(chr(c)+str(n)))/2)] for c in range(65, 68) for n in range(1, 4)}
 """
-{'A1': [False, 0, 0, 0, 1],
-'A2': [False, 0, 240, 0, 2], 
-'A3': [False, 0, 480, 0, 3], 
-'B1': [False, 0, 0, 240, 4], 
-'B2': [False, 0, 240, 240, 5], 
-'B3': [False, 0, 480, 240, 6], 
-'C1': [False, 0, 0, 480, 7], 
-'C2': [False, 0, 240, 480, 8], 
-'C3': [False, 0, 480, 480, 9]}
+Case:
+    {'A1': [False, 0, 0, 0, 1],
+    'A2': [False, 0, 240, 0, 2],
+    'A3': [False, 0, 480, 0, 3],
+    'B1': [False, 0, 0, 240, 4], 
+    'B2': [False, 0, 240, 240, 5], 
+    'B3': [False, 0, 480, 240, 6], 
+    'C1': [False, 0, 0, 480, 7], 
+    'C2': [False, 0, 240, 480, 8], 
+    'C3': [False, 0, 480, 480, 9]}
 """
 
 
