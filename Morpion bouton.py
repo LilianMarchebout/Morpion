@@ -8,6 +8,7 @@ Finished : mm/dd/yy
 ## Dimension: 720x720
 
 ##Prochaine(s) étape(s):
+    # Joue tout seul
     # Problème global joueur
     # Problème bouton gris
     # Message d'avertissement
@@ -83,9 +84,11 @@ def game(name):
                 substitute[0] = True #Case prise
                 if player == 0:
                     substitute[1] = 1 #J2 points
+                    files()
                     buttons[substitute[4]-1].config(image= cross) #Met la croix
                 if player == 1:
                     substitute[1] = 10#J1 points
+                    files()
                     buttons[substitute[4]-1].config(image= circle) #Met le cercle
                 case[name] = substitute
 
