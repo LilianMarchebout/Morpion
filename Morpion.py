@@ -80,8 +80,8 @@ def game(name):
     player %= 2
     
     #Pour chaque clef du dictionnaire
-    for key in case.keys():
-        if str(key) == name: 
+    for nameCase in case.keys():
+        if str(nameCase) == name: 
             substitute = case[name]
             if substitute[0] == True: #Si case déjà prise
                 player -= 1 #Revient au joueur initial
