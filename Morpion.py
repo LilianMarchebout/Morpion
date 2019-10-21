@@ -36,7 +36,7 @@ def grid():
     
     f = Tk() #Ouverture de l'interface et définition de la fenêtre
     f.geometry("720x720") #Dimension de l'interface
-    default = PhotoImage(file='default.png')
+    default = PhotoImage(file='./Image/default.png')
     
     #Boutons:
     #Le x=0 est le bord gauche de la fenetre
@@ -66,8 +66,8 @@ def game(name):
     """
     
     #Variable Image
-    cross = PhotoImage(file='croix.png')
-    circle = PhotoImage(file='cercle.png')
+    cross = PhotoImage(file='./Image/croix.png')
+    circle = PhotoImage(file='./Image/cercle.png')
     
     #Définition du joueur qui joue
     global player
