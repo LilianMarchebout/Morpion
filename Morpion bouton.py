@@ -91,6 +91,19 @@ def game(name):
 
 
 
+def files():
+    """
+    Fichier pour inscrire les éléments du dictionnaire
+    """
+    folder = open("element_dic.txt", "w")
+    folder.write("")
+    folder.close()
+    folder = open("element_dic.txt", "a")
+    for nameCase in case.keys():
+        folder.write(nameCase + " = " +str(case[nameCase]) + "\n")
+    folder.close()
+
+
 
 ##VARIABLE
 #Dictionnaire avec comme clef le nom de la case, et comme valeur une liste avec l'appartenance à un joueur, le nombre de points, l'abscisse, l'ordonnée, le numéro de la case
@@ -106,12 +119,7 @@ case ={str(chr(c)+str(n)):[False, 0, (n-1)*240, ("ZABC".index(chr(c))-1)*240, in
 'C2': [False, 0, 240, 480, 8], 
 'C3': [False, 0, 480, 480, 9]}
 """
-
-#Fichier pour inscrire les éléments du dictionnaire
-folder = open("element_dic.txt", "w")
-folder.write(str(case) + "\n")
-folder.close()
-
+files()
 
 #Variable permettant de déterminer quel joueur joue 
 player = 0
