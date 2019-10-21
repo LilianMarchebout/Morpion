@@ -106,8 +106,9 @@ case ={str(chr(c)+str(n)):[False, 0, (n-1)*240, ("ZABC".index(chr(c))-1)*240, in
 'C2': [False, 0, 240, 480, 8], 
 'C3': [False, 0, 480, 480, 9]}
 """
+
 #Fichier pour inscrire les éléments du dictionnaire
-folder = open("test.txt", "w")
+folder = open("element_dic.txt", "w")
 folder.write(str(case) + "\n")
 folder.close()
 
