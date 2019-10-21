@@ -10,7 +10,6 @@ Finished : mm/dd/yy
 
 ##Prochaine(s) étape(s):
     # Joue tout seul
-    # Problème global joueur
     # Problème bouton gris
     # Message d'avertissement
     # Définition des lignes gagnantes
@@ -52,6 +51,7 @@ def grid():
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     f.mainloop() #Fermeture de l'interface
+    global player
     player = 0
 
 
