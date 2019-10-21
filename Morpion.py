@@ -47,17 +47,13 @@ def grid():
     for nameCase in case.keys():
         newbutton = Button(f, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = test(nameCase)) #Commande du bouton
+        newbutton.config(command = game(nameCase)) #Commande du bouton
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     f.mainloop() #Fermeture de l'interface
     global player
     player = 0
 
-
-
-def test(name):
-    print("Hello World" + name)
 
 
     
