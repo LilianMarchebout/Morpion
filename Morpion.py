@@ -53,6 +53,20 @@ buttons = []
 
 
 ##FONCTION
+def files():
+    """
+    Fichier pour inscrire les éléments du dictionnaire
+    """
+    folder = open("element_dic.txt", "w")
+    folder.write("")
+    folder.close()
+    folder = open("element_dic.txt", "a")
+    for nameCase in case.keys():
+        folder.write(nameCase + " = " +str(case[nameCase]) + "\n")
+    folder.close()
+
+
+
 def intermediate(name):
     """
     Sert à que bouton ne lance pas la commande lors de sa définition.
@@ -122,7 +136,6 @@ def grid():
 
     # Création des boutons
     global inter
-    global player
     inter = 0
     for nameCase in case.keys():
         newbutton = Button(f, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
@@ -134,20 +147,6 @@ def grid():
     inter = 1
     global player
     player = 0
-
-
-
-def files():
-    """
-    Fichier pour inscrire les éléments du dictionnaire
-    """
-    folder = open("element_dic.txt", "w")
-    folder.write("")
-    folder.close()
-    folder = open("element_dic.txt", "a")
-    for nameCase in case.keys():
-        folder.write(nameCase + " = " +str(case[nameCase]) + "\n")
-    folder.close()
 
 
 
