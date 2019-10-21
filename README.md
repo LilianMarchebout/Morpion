@@ -6,7 +6,7 @@ Owner : Nalil10 or Lilian
 
 Contributor : Nobody
 
-Date : mm/dd/yy
+Date format : mm/dd/yy
 
 Started : 09/30/19
 
