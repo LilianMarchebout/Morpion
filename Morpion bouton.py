@@ -1,6 +1,7 @@
 """
 Title : Morpion
-By Lilian
+Owner : Lilian
+Contributor : None
 Started : 09/30/19
 Finished : mm/dd/yy
 """
