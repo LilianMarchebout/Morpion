@@ -9,8 +9,7 @@ Finished : mm/dd/yy
 ## Dimension: 720x720
 
 ##Prochaine(s) étape(s):
-    # Joue tout seul
-    # Problème bouton gris
+    # Joue tout seul 
     # Message d'avertissement
     # Définition des lignes gagnantes
     # Fin
@@ -47,7 +46,7 @@ def grid():
     for nameCase in case.keys():
         newbutton = Button(f, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = game(nameCase)) #Commande du bouton
+        newbutton.config(command = intermediate(nameCase)) #Commande du bouton
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     f.mainloop() #Fermeture de l'interface
@@ -56,7 +55,14 @@ def grid():
 
 
 
-    
+def intermediate(name):
+    """
+    Sert à que bouton ne lance pas la commande lors de sa définition.
+    """
+    game(name)
+
+
+
 def game(name):
     """
     Quand la boutton est actionné :
