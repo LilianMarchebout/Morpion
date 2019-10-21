@@ -62,7 +62,7 @@ def intermediate(name):
     """
     Sert à que bouton ne lance pas la commande lors de sa définition.
     """
-    global inter
+    global inter 
     print(inter)
     if inter == 1:
         game(name)
