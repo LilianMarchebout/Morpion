@@ -28,7 +28,18 @@ from time import sleep #Permet de faire attendre le programme notamment pour met
 
 ##VARIABLE
 #Dictionnaire avec comme clef le nom de la case, et comme valeur une liste avec l'appartenance à un joueur, le nombre de points, l'abscisse, l'ordonnée, le numéro de la case
-case ={str(chr(c)+str(n)):[False, 0, (n-1)*240, ("ZABC".index(chr(c))-1)*240, int(("A0A1A2A3B1B2B3C1C2C3".index(chr(c)+str(n)))/2)] for c in range(65, 68) for n in range(1, 4)}
+def files():
+    """
+    Fichier pour inscrire les éléments du dictionnaire
+    """
+    folder = open("element_dic.txt", "w")
+    folder.write("")
+    folder.close()
+    folder = open("element_dic.txt", "a")
+    for nameCase in case.keys():
+        folder.write(nameCase + " = " +str(case[nameCase]) + "\n")
+    folder.close()
+case ={str(chr(utf)+str(number)):[False, 0, (number-1)*240, ("ZABC".index(chr(utf))-1)*240, int(("A0A1A2A3B1B2B3C1C2C3".index(chr(utf)+str(number)))/2)] for utf in range(65, 68) for number in range(1, 4)}
 """
 Case:
     {'A1': [False, 0, 0, 0, 1],
@@ -41,6 +52,7 @@ Case:
     'C2': [False, 0, 240, 480, 8], 
     'C3': [False, 0, 480, 480, 9]}
 """
+files()
 
 
 #Variable permettant de déterminer quel joueur joue 
@@ -54,28 +66,15 @@ buttons = []
 
 
 ##FONCTION
-def files():
-    """
-    Fichier pour inscrire les éléments du dictionnaire
-    """
-    folder = open("element_dic.txt", "w")
-    folder.write("")
-    folder.close()
-    folder = open("element_dic.txt", "a")
-    for nameCase in case.keys():
-        folder.write(nameCase + " = " +str(case[nameCase]) + "\n")
-    folder.close()
 
-
-
-def intermediate(name):
+def intermediateFunction(name):
     """
     Sert à que bouton ne lance pas la commande lors de sa définition.
     """
     global player
-    global inter 
-    print(inter)
-    if inter == 1:
+    global intermediateVariable 
+    print(intermediateVariable)
+    if intermediateVariable == 1:
         game(name)
 
 
@@ -124,8 +123,8 @@ def grid():
     Crée la grille avec l'interface tkinter et crée les boutons
     """
     
-    f = Tk() #Ouverture de l'interface et définition de la fenêtre
-    f.geometry("720x720") #Dimension de l'interface
+    window = Tk() #Ouverture de l'interface et définition de la fenêtre
+    window.geometry("720x720") #Dimension de l'interface
     default = PhotoImage(file='./Image/default.png')
 
 
@@ -136,16 +135,16 @@ def grid():
     #La position est la position du coin en haut à gauche du bouton
 
     # Création des boutons
-    global inter
-    inter = 0
+    global intermediateVariable
+    intermediateVariable = 0
     for nameCase in case.keys():
-        newbutton = Button(f, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
+        newbutton = Button(window, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = intermediate(nameCase)) #Commande du bouton
+        newbutton.config(command = intermediateFunction(nameCase)) #Commande du bouton
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
-    f.mainloop() #Fermeture de l'interface
-    inter = 1
+    window.mainloop() #Fermeture de l'interface
+    intermediateVariable = 1
     global player
     player = 0
 
