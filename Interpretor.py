@@ -1,4 +1,3 @@
-
 from tkinter import Button, Tk
 fenetre = Tk()
 def fonc(name):
