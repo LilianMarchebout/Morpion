@@ -133,7 +133,8 @@ def game(name):
         if str(nameCase) == name: 
             substitute = case[name]
             if substitute[0] == True: #Si case déjà prise
-                player -= 1 #Revient au joueur initial
+                player += 1
+                player %= 2 #Revient au joueur initial
                 break
             else:
                 substitute[0] = True #Case prise
