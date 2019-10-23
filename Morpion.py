@@ -88,10 +88,11 @@ def gridd():
     # Création des boutons
     global intermediateVariable
     intermediateVariable= 0
+    cross = PhotoImage(file='./Image/croix.png')
     for nameCase in case.keys():
-        newbutton= Button(window, name= str(nameCase).lower(), state= "normal") #Définition du bouton
+        newbutton= Button(window, image= cross, name= str(nameCase).lower(), state= "normal") #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command= intermediateFunction(nameCase)) #Commande du bouton
+        #newbutton.config(command= image(nameCase)) #Commande du bouton
         substitute= case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     intermediateVariable= 1
