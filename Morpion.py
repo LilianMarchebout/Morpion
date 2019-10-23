@@ -75,7 +75,7 @@ def gridd():
     Crée la grille avec l'interface tkinter et crée les boutons
     """
     global window
-    window.geometry("1000x750") #Dimension de l'interface
+    window.geometry("680x680") #Dimension de l'interface
     #default = PhotoImage(file='./Image/default.png')
 
 
