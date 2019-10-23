@@ -93,6 +93,7 @@ def gridd():
         newbutton.pack()
         buttons.append(newbutton) #Ajouter à la liste
         newbutton.config(command = intermediateFunction(nameCase))#Commande du bouton
+        newbutton.config(state='active')
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     intermediateVariable = 1
