@@ -90,7 +90,7 @@ def gridd():
     intermediateVariable= 0
     cross = PhotoImage(file='./Image/croix.png')
     for nameCase in case.keys():
-        newbutton= Button(window, image= cross, name= str(nameCase).lower(), state= "normal") #Définition du bouton
+        newbutton= Button(window, image= cross, name= str(nameCase).lower(), state= "active") #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
         #newbutton.config(command= image(nameCase)) #Commande du bouton
         substitute= case[nameCase] 
