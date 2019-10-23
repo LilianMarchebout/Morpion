@@ -18,8 +18,11 @@ Finished : mm/dd/yy
 
 
 ##IMPORTATION
-
-from tkinter import Tk, PhotoImage, Button  #Interface tactile
+import sys
+if sys.version_info[0] < 3:
+    from Tkinter import Button, Tk, PhotoImage
+else:
+    from tkinter import Button, Tk, PhotoImage  #Interface tactile
 
 from time import sleep #Permet de faire attendre le programme notamment pour mettre en pause
 
@@ -66,6 +69,39 @@ buttons = []
 
 
 ##FONCTION
+
+def gridd():
+    """
+    Crée la grille avec l'interface tkinter et crée les boutons
+    """
+    global intermediateVariable
+    global player
+    window = Tk() #Ouverture de l'interface et définition de la fenêtre
+    window.geometry("720x720") #Dimension de l'interface
+    default = PhotoImage(file='./Image/default.png')
+    window.mainloop() #Fermeture de l'interface
+
+
+
+    #Boutons:
+    #Le x=0 est le bord gauche de la fenetre
+    #Le y=0 est le bord haut de la fenetre
+    #La position est la position du coin en haut à gauche du bouton
+
+    # Création des boutons
+    intermediateVariable = 0
+    for nameCase in case.keys():
+        newbutton = Button(window, image = default, name = nameCase, text=nameCase, height = 240, width = 240, command= None) #Définition du bouton
+        newbutton.pack()
+        buttons.append(newbutton) #Ajouter à la liste
+        newbutton.config(command = intermediateFunction(nameCase)) #Commande du bouton
+        substitute = case[nameCase] 
+        newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
+    intermediateVariable = 1
+    window.mainloop() #Fermeture de l'interface
+    player = 0
+
+
 
 def intermediateFunction(name):
     """
@@ -117,41 +153,9 @@ def game(name):
 
 
 
-def grid():
-    """
-    Crée la grille avec l'interface tkinter et crée les boutons
-    """
-    global intermediateVariable
-    global player
-    window = Tk() #Ouverture de l'interface et définition de la fenêtre
-    window.geometry("720x720") #Dimension de l'interface
-    default = PhotoImage(file='./Image/default.png')
-    window.mainloop() #Fermeture de l'interface
-
-
-
-    #Boutons:
-    #Le x=0 est le bord gauche de la fenetre
-    #Le y=0 est le bord haut de la fenetre
-    #La position est la position du coin en haut à gauche du bouton
-
-    # Création des boutons
-    intermediateVariable = 0
-    for nameCase in case.keys():
-        newbutton = Button(window, image = default, text=nameCase, height = 240, width = 240) #Définition du bouton
-        buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = intermediateFunction(nameCase)) #Commande du bouton
-        substitute = case[nameCase] 
-        newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
-    intermediateVariable = 1
-    window.mainloop() #Fermeture de l'interface
-    player = 0
-
-
-
 
 ##SCRIPT
-grid()
+gridd()
 
 
 
