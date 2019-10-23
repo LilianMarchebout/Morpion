@@ -95,7 +95,6 @@ def gridd():
         newbutton.config(command = intermediateFunction(nameCase))#Commande du bouton
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
-        print(newbutton._name)
     intermediateVariable = 1
     global player
     player = 0
