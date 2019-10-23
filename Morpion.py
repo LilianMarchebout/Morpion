@@ -74,12 +74,9 @@ def gridd():
     """
     Crée la grille avec l'interface tkinter et crée les boutons
     """
-    global intermediateVariable
-    global player
-    window = Tk() #Ouverture de l'interface et définition de la fenêtre
+    global window
     window.geometry("720x720") #Dimension de l'interface
     default = PhotoImage(file='./Image/default.png')
-    window.mainloop() #Fermeture de l'interface
 
 
 
@@ -89,16 +86,18 @@ def gridd():
     #La position est la position du coin en haut à gauche du bouton
 
     # Création des boutons
+    global intermediateVariable
     intermediateVariable = 0
     for nameCase in case.keys():
-        newbutton = Button(window, image = default, name = nameCase, text=nameCase, height = 240, width = 240, command= None) #Définition du bouton
+        newbutton = Button(window, image = default, name = str(nameCase).lower(), text=nameCase, height = 240, width = 240) #Définition du bouton
         newbutton.pack()
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = intermediateFunction(nameCase)) #Commande du bouton
+        newbutton.config(command = intermediateFunction(nameCase))#Commande du bouton
         substitute = case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
+        print(newbutton._name)
     intermediateVariable = 1
-    window.mainloop() #Fermeture de l'interface
+    global player
     player = 0
 
 
@@ -108,7 +107,7 @@ def intermediateFunction(name):
     Sert à que le bouton ne lance pas la commande lors de sa définition.
     """
     global player
-    global intermediateVariable 
+    global intermediateVariable
     if intermediateVariable == 1:
         game(name)
 
@@ -155,8 +154,9 @@ def game(name):
 
 
 ##SCRIPT
+window = Tk() #Ouverture de l'interface et définition de la fenêtre
 gridd()
-
+window.mainloop() #Fermeture de l'interface
 
 
 ##PAUSE
