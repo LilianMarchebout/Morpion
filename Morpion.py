@@ -22,7 +22,7 @@ import sys
 if sys.version_info[0] < 3:
     from Tkinter import Button, Tk, PhotoImage
 else:
-    from tkinter import Button, Tk, PhotoImage  #Interface tactile
+    from tkinter import Button, Tk, PhotoImage #Interface tactile
 
 from time import sleep #Permet de faire attendre le programme notamment pour mettre en pause
 
@@ -75,8 +75,8 @@ def gridd():
     Crée la grille avec l'interface tkinter et crée les boutons
     """
     global window
-    window.geometry("720x720") #Dimension de l'interface
-    default = PhotoImage(file='./Image/default.png')
+    window.geometry("1000x750") #Dimension de l'interface
+    #default = PhotoImage(file='./Image/default.png')
 
 
 
@@ -87,18 +87,16 @@ def gridd():
 
     # Création des boutons
     global intermediateVariable
-    intermediateVariable = 0
+    intermediateVariable= 0
     for nameCase in case.keys():
-        newbutton = Button(window, image = default, name = str(nameCase).lower(), text=nameCase, height = 240, width = 240, state="disabled") #Définition du bouton
-        newbutton.pack()
+        newbutton= Button(window, name= str(nameCase).lower(), state= "normal") #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        newbutton.config(command = intermediateFunction(nameCase))#Commande du bouton
-        newbutton.config(state='active')
-        substitute = case[nameCase] 
+        newbutton.config(command= intermediateFunction(nameCase)) #Commande du bouton
+        substitute= case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
-    intermediateVariable = 1
+    intermediateVariable= 1
     global player
-    player = 0
+    player= 0
 
 
 
@@ -109,7 +107,14 @@ def intermediateFunction(name):
     global player
     global intermediateVariable
     if intermediateVariable == 1:
-        game(name)
+        image(name)
+
+
+
+def image(name):
+    cross = PhotoImage(file='./Image/croix.png')
+    substitute = case[name]
+    buttons[substitute[4]-1].config(image= cross)
 
 
 
