@@ -1,7 +1,6 @@
 """
-File allowing to test lines codes.
+File allowing to test lines codes. Will be deleted after.
 """
-
 
 from tkinter import Button, Tk, PhotoImage
 fenetre = Tk()
