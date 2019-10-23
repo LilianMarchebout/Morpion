@@ -89,7 +89,7 @@ def gridd():
     global intermediateVariable
     intermediateVariable = 0
     for nameCase in case.keys():
-        newbutton = Button(window, image = default, name = str(nameCase).lower(), text=nameCase, height = 240, width = 240) #Définition du bouton
+        newbutton = Button(window, image = default, name = str(nameCase).lower(), text=nameCase, height = 240, width = 240, state="disabled") #Définition du bouton
         newbutton.pack()
         buttons.append(newbutton) #Ajouter à la liste
         newbutton.config(command = intermediateFunction(nameCase))#Commande du bouton
