@@ -92,7 +92,7 @@ def gridd():
     for nameCase in case.keys():
         newbutton= Button(window, image= cross, name= str(nameCase).lower(), state= "active") #Définition du bouton
         buttons.append(newbutton) #Ajouter à la liste
-        #newbutton.config(command= image(nameCase)) #Commande du bouton
+        #newbutton.config(command= intermediateFunction(nameCase)) #Commande du bouton
         substitute= case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     intermediateVariable= 1
@@ -108,14 +108,8 @@ def intermediateFunction(name):
     global player
     global intermediateVariable
     if intermediateVariable == 1:
-        image(name)
+        game(name)
 
-
-
-def image(name):
-    cross = PhotoImage(file='./Image/croix.png')
-    substitute = case[name]
-    buttons[substitute[4]-1].config(image= cross)
 
 
 
