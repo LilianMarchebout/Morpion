@@ -75,6 +75,8 @@ def gridd():
     Crée la grille avec l'interface tkinter et crée les boutons
     """
     global window
+    global intermediateVariable
+    global player
     window.geometry("680x680") #Dimension de l'interface
     #default = PhotoImage(file='./Image/default.png')
 
@@ -86,7 +88,6 @@ def gridd():
     #La position est la position du coin en haut à gauche du bouton
 
     # Création des boutons
-    global intermediateVariable
     intermediateVariable= 0
     cross = PhotoImage(file='./Image/croix.png')
     for nameCase in case.keys():
@@ -96,7 +97,6 @@ def gridd():
         substitute= case[nameCase] 
         newbutton.place(x= substitute[2], y= substitute[3]) #Placement du bouton
     intermediateVariable= 1
-    global player
     player= 0
 
 
@@ -105,9 +105,9 @@ def intermediateFunction(name):
     """
     Sert à que le bouton ne lance pas la commande lors de sa définition.
     """
-    global player
     global intermediateVariable
     if intermediateVariable == 1:
+        global player
         game(name)
 
 
@@ -120,11 +120,8 @@ def game(name):
         - Met les points suivant le joueur (les points permettent de définir le gagnant)
         - Met la case en croix ou en cercle selon le joueur
     """
-    
-    #Variable Image
     cross = PhotoImage(file='./Image/croix.png')
     circle = PhotoImage(file='./Image/cercle.png')
-    
     #Définition du joueur qui joue
     global player
     print(player)
