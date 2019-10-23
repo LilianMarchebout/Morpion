@@ -1,3 +1,8 @@
+"""
+File allowing to test lines codes.
+"""
+
+
 from tkinter import Button, Tk, PhotoImage
 fenetre = Tk()
 image = PhotoImage(file="./Image/cercle.png")
