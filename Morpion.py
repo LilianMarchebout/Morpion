@@ -1,12 +1,3 @@
-
-"""
-Title : Morpion
-Owner : Lilian
-Contributor : None
-Started : 09/30/19
-Finished : mm/dd/yy
-"""
-
 ## Dimension: 720x720 ou 680x680
 
 ##Prochaine(s) étape(s):
